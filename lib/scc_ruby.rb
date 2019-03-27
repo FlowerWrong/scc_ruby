@@ -4,8 +4,8 @@ require 'json'
 
 module SccRuby
   class Api
-    def self.fetch(config_server_url, app_name)
-      uri = URI(build_url(config_server_url, app_name))
+    def self.fetch(config_server_url, app_name, app_env = 'default')
+      uri = URI(build_url(config_server_url, app_name, app_env))
       res = Net::HTTP.get_response(uri)
 
       if res.code != '200'
@@ -43,7 +43,7 @@ module SccRuby
       h
     end
 
-    def self.build_url(config_server_url, app_name, app_env = 'default')
+    def self.build_url(config_server_url, app_name, app_env)
       "#{config_server_url}/#{app_name}/#{app_env}"
     end
   end

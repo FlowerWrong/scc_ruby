@@ -23,7 +23,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-h = SccRuby::Api.fetch('config_server_url', 'app_name')
+h = SccRuby::Api.fetch('config_server_url', 'app_name', Rails.env)
 pp h
 ```
 
