@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ['FlowerWrong']
   spec.email         = ['sysuyangkang@gmail.com']
 
-  spec.summary       = 'summary'
-  spec.description   = 'des'
-  spec.homepage      = 'https://bundler.io/v2.0/guides/creating_gem.html'
+  spec.summary       = 'spring cloud config client in ruby'
+  spec.description   = 'This is a spring cloud config client in ruby, just return a hash and support yaml array'
+  spec.homepage      = 'https://github.com/FlowerWrong/scc_ruby'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -19,8 +19,8 @@ Gem::Specification.new do |spec|
     spec.metadata['allowed_push_host'] = 'https://rubygems.org/'
 
     spec.metadata['homepage_uri'] = spec.homepage
-    spec.metadata['source_code_uri'] = 'https://bundler.io/v2.0/guides/creating_gem.html'
-    spec.metadata['changelog_uri'] = 'https://bundler.io/v2.0/guides/creating_gem.html'
+    spec.metadata['source_code_uri'] = spec.homepage
+    spec.metadata['changelog_uri'] = 'https://github.com/FlowerWrong/scc_ruby/blob/master/README.md'
   else
     raise 'RubyGems 2.0 or newer is required to protect against ' \
       'public gem pushes.'

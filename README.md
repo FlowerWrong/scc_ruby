@@ -22,7 +22,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+h = SccRuby::Api.fetch('config_server_url', 'app_name')
+pp h
+```
 
 ## Development
 
