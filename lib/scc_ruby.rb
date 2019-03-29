@@ -4,9 +4,13 @@ require 'json'
 
 module SccRuby
   class Api
-    def self.fetch(config_server_url, app_name, app_env = 'default')
+    def self.fetch(config_server_url, app_name, app_env = 'default', basic_auth_username = '', basic_auth_password = '')
       uri = URI(build_url(config_server_url, app_name, app_env))
-      res = Net::HTTP.get_response(uri)
+      req = Net::HTTP::Get.new(uri)
+      req.basic_auth(basic_auth_username, basic_auth_password) unless basic_auth_username.empty? && basic_auth_password.empty?
+      res = Net::HTTP.start(uri.hostname, uri.port) do |http|
+        http.request(req)
+      end
 
       if res.code != '200'
         raise "Fail to fetch from spring cloud config server, http code #{res.code}, message #{res.message}"

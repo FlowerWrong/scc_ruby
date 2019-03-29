@@ -1,8 +1,6 @@
 # SccRuby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/scc_ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Spring cloud config client in ruby, just return a hash.
 
 ## Installation
 
@@ -24,6 +22,8 @@ Or install it yourself as:
 
 ```ruby
 h = SccRuby::Api.fetch('config_server_url', 'app_name', Rails.env)
+# or
+h = SccRuby::Api.fetch('config_server_url', 'app_name', Rails.env, 'basic_auth_username', 'basic_auth_password')
 pp h
 ```
 
